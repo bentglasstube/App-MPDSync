@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Synchronize MPD with another instance",
    "author" : [
       "Alan Berndt <alan@eatabrick.org>"
    ],
@@ -36,7 +36,10 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.008005"
+            "Getopt::Long" : "0",
+            "Net::MPD" : "0",
+            "Proc::Daemon" : "0",
+            "perl" : "5.010"
          }
       },
       "test" : {
