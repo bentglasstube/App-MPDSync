@@ -137,12 +137,25 @@ App::MPDSync - Synchronize MPD with another instance
 
 =head1 SYNOPSIS
 
-  > mpdsync --from otherhost --to localhost
+  mpd-sync --from otherhost --to localhost
 
 =head1 DESCRIPTION
 
 C<App::MPDSync> will keep an instance of C<MPD> synced with another instance.
 This can be useful for having failover for an online radio station.
+
+=head1 REQUIREMENTS
+
+Both MPD instances have to have the exact same files in their libraries or the
+destination server will get out of sync since it will not be able to play some
+of the files from the source server.
+
+Specifying the same server for both the source and the destination will simply
+stop C<MPD> and clear the playlist.
+
+If another program modifies the playlist of the destination server, C<mpd-sync>
+will not try to fix this until it is restarted.  As such, the servers will then
+be out of sync.
 
 =head1 AUTHOR
 
